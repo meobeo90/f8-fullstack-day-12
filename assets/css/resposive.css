@@ -1,0 +1,202 @@
+.drawer-open,
+.drawer-close,
+.sub-menu-open > i {
+  display: none;
+}
+/*  `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .container {
+    width: 970px;
+  }
+
+  .nav-wrapper .nav .nav-title {
+    padding: 14px 15px;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  .main-content .single-product {
+    width: calc(100% / 2 - 20px);
+  }
+
+  .footer .footer-list a {
+    font-size: 1.5rem;
+  }
+  .footer .inner .footer-logo,
+  .footer .subscribe {
+    width: 25%;
+  }
+  .download {
+    flex-wrap: wrap;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  textarea {
+    border-radius: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .container {
+    width: 750px;
+  }
+
+  .nav-wrapper {
+    position: absolute;
+    z-index: 99;
+    top: 140px;
+    left: 10px;
+    width: 80%;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition-property: opacity, max-height, visibility;
+    transition: 0.3s linear;
+    box-shadow: -1px 1px 5px;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  #drawer:checked ~ .nav-wrapper {
+    opacity: 1;
+    max-height: 1000px;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .drawer-open {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-size: 2.8rem;
+    padding: 20px;
+    align-self: flex-start;
+    margin-left: -10px;
+    cursor: pointer;
+  }
+
+  .nav-wrapper .nav {
+    display: block;
+  }
+
+  .nav > li {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav > li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .nav-wrapper .nav .nav-title {
+    flex-grow: 1;
+  }
+
+  .sub-menu-open > i {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .nav > li .sub-menu {
+    margin-top: 0;
+    width: 100%;
+    position: relative;
+    transform: scale(1, 0);
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+    transition-property: max-height, opacity, transform;
+    transition: 0.4s linear;
+    overflow: hidden;
+  }
+  :is(#open1, #open2, #open3, #open4, #open5, #open6, #open7):checked
+    ~ .sub-menu {
+    max-height: 500px;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .page-content .head-content {
+    border-radius: 0;
+  }
+  .hero {
+    margin-top: -100px;
+  }
+  .body-page .inner {
+    flex-wrap: wrap-reverse;
+    gap: 60px;
+  }
+  .sidebar {
+    width: 50%;
+  }
+  .page-content {
+    width: 100%;
+  }
+  .page-content .head-content {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .footer .inner {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .footer .inner .footer-logo,
+  .footer .subscribe {
+    width: 50%;
+  }
+  .footer .inner > div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .container {
+    width: 95vw;
+  }
+  .sidebar,
+  .sidebar-search-box form {
+    width: 100%;
+  }
+
+  .footer .inner {
+    display: block;
+  }
+  .footer .inner > div + div {
+    margin-top: 50px;
+  }
+  .footer .inner .footer-logo,
+  .footer .subscribe {
+    width: 100%;
+  }
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 550px;
+  }
+  .main-content .single-product {
+    width: 100%;
+  }
+}
